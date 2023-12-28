@@ -12,3 +12,61 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.container {
+  background-color: #bfb3c4;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: #354f6e;
+
+  .title {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 6px;
+    font-size: larger;
+    margin: 4px;
+    padding: 4px;
+  }
+  .text-input {
+    border: none;
+    border-radius: 4px;
+    width: 300px;
+    height: 30px;
+  }
+  .add-button {
+    border-radius: 10px;
+    background-color: #354f6e;
+    border: #354f6e;
+    width: 150px;
+    height: 30px;
+    margin: 20px;
+    color: #6f7f99;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: larger;
+    align-items: center;
+    padding: 4px;
+  }
+  .tasks-list {
+    margin: 8px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: larger;
+    margin: 4px;
+    padding: 4px;
+  }
+}
+.completed-list {
+  text-align: center;
+  padding: 12px;
+  .delete-task {
+    margin: 4px;
+    color: red;
+
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: larger;
+
+    padding: 4px;
+  }
+}

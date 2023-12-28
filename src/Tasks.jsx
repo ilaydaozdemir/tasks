@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import "./index.css";
 
 const Tasks = () => {
   const [taskText, setTaskText] = useState("");
@@ -23,27 +24,36 @@ const Tasks = () => {
   console.log("tasks", tasks);
   return (
     <div>
-      <h3>Tasks</h3>
-      <div className="form">
-        <input value={taskText} onChange={updateTaskText} />
-        <button onClick={addTask}>Add Task</button>
-      </div>
-      <div className="tasks-list">
-        {tasks.map((task) => {
-          const { id, taskText } = task;
-          return (
-            <div key={id} onClick={completeTask(task)}>
-              {taskText}
-            </div>
-          );
-        })}
+      <div className="container">
+        <div className="title">TASKS</div>
+        <div className="form">
+          <input
+            className="text-input"
+            value={taskText}
+            onChange={updateTaskText}
+          />
+
+          <button className="add-button" onClick={addTask}>
+            Add Task
+          </button>
+        </div>
+        <div className="tasks-list">
+          {tasks.map((task) => {
+            const { id, taskText } = task;
+            return (
+              <div key={id} onClick={completeTask(task)}>
+                {taskText}
+              </div>
+            );
+          })}
+        </div>
       </div>
       <div className="completed-list">
-        <h3>Completed Tasks</h3>
         {completedTasks.map((task) => {
           const { id, taskText } = task;
           return (
             <div key={id}>
+              <div className="title">Completed Tasks</div>
               {taskText}
               <span className="delete-task" onClick={deleteTask(task)}>
                 x
