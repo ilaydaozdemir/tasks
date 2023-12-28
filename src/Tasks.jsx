@@ -12,7 +12,12 @@ const Tasks = () => {
   const addTask = () => {
     setTasks([...tasks, { taskText, id: uuidv4() }]);
   };
+  const completeTask = (completedTask) => () => {
+    setCompletedTasks([...completedTasks, completedTask]);
+    setTasks(tasks.filter((task) => task.id !== completedTask.id));
+  };
 
+  console.log("tasks", tasks);
   return (
     <div>
       <h3>Tasks</h3>
@@ -23,7 +28,11 @@ const Tasks = () => {
       <div className="tasks-list">
         {tasks.map((task) => {
           const { id, taskText } = task;
-          return <div key={id}>{taskText}</div>;
+          return (
+            <div key={id} onClick={completeTask(task)}>
+              {taskText}
+            </div>
+          );
         })}
       </div>
     </div>
